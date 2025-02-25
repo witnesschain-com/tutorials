@@ -1,48 +1,40 @@
 import os
 import pytz
 import datetime
+import json
 
 from witnesschain import api
 
+# Get timezone
 tz = os.getenv("TZ")
 if tz == None or tz == "":
-	tz = "UTC"
+    tz = "UTC"
 
-timezone	= pytz.timezone(tz)
-now		= datetime.datetime.now(timezone)
+timezone = pytz.timezone(tz)
+now = datetime.datetime.now(timezone)
 
-create_campaign_data = {
+# Load campaign configuration from JSON file
+config_file = './campaign_config.json'
 
-	"campaign"		: "my-campaign",
-	"description"		: "my-campaign-description",
+try:
+    with open(config_file, 'r') as f:
+        campaign_config = json.load(f)
+except FileNotFoundError:
+    print(f"Error: Configuration file '{config_file}' not found.")
+    exit(1)
+except json.JSONDecodeError:
+    print(f"Error: Invalid JSON in configuration file '{config_file}'.")
+    exit(1)
 
-	"type"			: "individual",
+# Add timestamp information
+campaign_config["starts_at"] = now.isoformat()
+campaign_config["ends_at"] = (now + datetime.timedelta(days=10)).isoformat()
 
-	"tags"			: [
-		"campaign",
-		"tags"
-	],
-
-	# images shown on phone
-	"banner_url"		: "https://www.google.com/x.png",
-	"poster_url"		: "https://www.google.com/x.png",
-
-	"currency"		: "POINTS",	# What currency will be rewarded to participants
-	"total_rewards"		: 10.0,		# The total rewards the campaign can give
-	"reward_per_task"	: 2.0,		# rewards per task
-	"fuel_required"		: 1.0,		# Fuel that will be spent by the user for this task
-
-	"starts_at"		: now.isoformat(), # When campaign starts and ends
-	"ends_at"		: (now + datetime.timedelta(days=10)).isoformat(),
-
-	"max_submissions"	: 10000,	# Max submissions that this campaign can accept
-
-	"is_active"		: False		# if true, makes it immediately available to all users
-}
-
-wc_api = api()
-
-wc_api.login()
-
-wc_api.create_campaign(create_campaign_data)
-
+# Initialize API and create campaign
+try:
+    wc_api = api()
+    wc_api.login()
+    result = wc_api.create_campaign(campaign_config)
+    print(f"Campaign created successfully: {result}")
+except Exception as e:
+    print(f"Error creating campaign: {str(e)}")
