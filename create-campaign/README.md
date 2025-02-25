@@ -25,7 +25,6 @@ pip install -r requirements.txt
 The script requires the following Python packages:
 - pytz
 - datetime
-- witnesschain
 
 ## Usage
 
