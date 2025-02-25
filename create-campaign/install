@@ -1,0 +1,8 @@
+#!/bin/sh
+
+dir=`dirname $0`
+cd $dir
+
+python3 -m venv venv 
+source venv/bin/activate
+python3 -m pip install pytz requests eth_account
