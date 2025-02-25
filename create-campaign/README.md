@@ -111,6 +111,7 @@ The script demonstrates the configuration for different campaign types:
 Key parameters that can be configured:
 - Campaign name and description
 - Geographic constraints (latitude, longitude, radius)
+    - If you want to configure global tasks, you can ignore these fields. 
 - Visual assets (banner and poster URLs)
 - Reward structure (currency, amounts, fuel requirements)
 - Time constraints (start and end dates)
