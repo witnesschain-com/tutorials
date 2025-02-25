@@ -155,7 +155,7 @@ FAILURE 400 https://mainnet.witnesschain.com/proof/v1/pol/create-campaign
         }
 }
 ```
-- Radius should be between 0 and  
+- Radius should be between 0 and 100
 
 ## Notes
 
