@@ -90,6 +90,12 @@ The campaigns should appear if they are successfully launched
 <img src="Screenshot_1.png" width="220" height="540" alt="Description">
 <img src="Screenshot_2.png" width="220" height="540" alt="Description">
 
+### Obtain the feed photos for the campaign
+```bash
+python get-feed-from-campaign.py
+```
+
+
 ## Script Overview
 
 The provided script shows how to:

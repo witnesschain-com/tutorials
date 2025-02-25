@@ -55,7 +55,7 @@ class api:
 
 		if r.status_code == 200:
 			print("\033[92mSUCCESS\033[0m",r.url)
-			print(r.text)
+			#print(r.text)
 		else:
 			print("\033[91mFAILURE\033[0m",r.status_code,r.url)
 			print(r.text)
@@ -115,5 +115,15 @@ class api:
 			"create-campaign",
 			json.dumps(campaign_data)
 		)
+	#
+
+
+	def get_feed_from_campaign (self,payload):
+	#
+		r = self.do_post (
+			"photo-feed-from-campaign",
+			json.dumps(payload)
+		)
+		return r
 	#
 #
