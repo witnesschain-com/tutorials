@@ -12,7 +12,7 @@ This repository contains a tutorial script that demonstrates how to use the Witn
 1. Clone the repository:
 ```bash
 git clone https://github.com/witnesschain-com/witnesschain-tutorial.git
-cd witnesschain-tutorial
+cd tutorials
 ```
 
 2. Install the required dependencies:
