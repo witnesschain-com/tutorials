@@ -62,7 +62,9 @@ Given below is a sample config file for a coffee campaign
 export PRIVATE_KEY=<PRIVATE_KEY_WHITELISTED_TO_CREATE_CAMPAIGNS>
 ```
 
-### Create the campaign on InfinityWatch app
+Contact us on [Discord](https://discord.gg/2n35sBfCNR) to get your key whitelisted
+
+### Create the campaign on InfinityWatch
 
 #### Execution 
 ```bash
