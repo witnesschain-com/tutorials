@@ -91,6 +91,8 @@ class api:
 				"signature" : signature
 			})
 		)
+
+		return r
 	#
 
 	def get_balance (self):
@@ -99,6 +101,8 @@ class api:
 			"my-balance",
 			json.dumps({})
 		)
+
+		return r
 	#
 
 	def get_campaigns (self):
@@ -107,6 +111,8 @@ class api:
 			"campaigns",
 			json.dumps({})
 		)
+
+		return r
 	#
 
 	def create_campaign (self,campaign_data):
@@ -115,6 +121,8 @@ class api:
 			"create-campaign",
 			json.dumps(campaign_data)
 		)
+
+		return r
 	#
 
 
@@ -124,6 +132,7 @@ class api:
 			"photo-feed-from-campaign",
 			json.dumps(payload)
 		)
+
 		return r
 	#
 #
