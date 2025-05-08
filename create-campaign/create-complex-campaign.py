@@ -47,7 +47,7 @@ create_campaign_data = {
 
 	"currency"		: "POINTS",	# What currency will be rewarded to participants
 	"total_rewards"		: 10.0,		# The total rewards the campaign can give
-	"reward_per_task"	: 2.0,		# rewards per task
+	"reward_per_submission"	: 2.0,		# rewards per task
 	"fuel_required"		: 1.0,		# Fuel that will be spent by the user for this task
 
 	"starts_at"		: now.isoformat(), # When campaign starts and ends

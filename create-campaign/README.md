@@ -49,7 +49,7 @@ Given below is a sample config file for a coffee campaign
     "poster_url": "https://truesnap.s3.us-east-1.amazonaws.com/poster_loveforcoffee.jpg",
     "currency": "POINTS",
     "total_rewards": 10.0,
-    "reward_per_task": 2.0,
+    "reward_per_submission: 2.0,
     "fuel_required": 1.0,
     "max_submissions": 10000,
     "is_active": true
