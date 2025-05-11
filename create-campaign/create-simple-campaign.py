@@ -2,6 +2,7 @@ import os
 import pytz
 import datetime
 import json
+from dotenv import load_dotenv
 
 from witnesschain import api
 
@@ -12,6 +13,7 @@ if tz == None or tz == "":
 
 timezone = pytz.timezone(tz)
 now = datetime.datetime.now(timezone)
+load_dotenv()
 
 # Load campaign configuration from JSON file
 config_file = './campaign_config.json'
